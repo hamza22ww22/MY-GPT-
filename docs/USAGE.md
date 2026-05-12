@@ -1,100 +1,91 @@
-# 💡 Usage Guide
+# 💻 Usage Guide
 
-Complete guide to using Unlimited AI Chat effectively.
-
----
+Complete guide to using InfinityChat effectively.
 
 ## 🚀 Quick Start
 
-```bash
-# Single query
-python ai_chat.py "What is Python?"
+### Basic Usage
 
-# Interactive mode
-python ai_chat.py
+```bash
+# Interactive mode (recommended for beginners)
+python infinitychat.py
+
+# Single question
+python infinitychat.py "What is quantum physics?"
 ```
+
+That's it! You're ready to chat! 🎉
 
 ---
 
-## 📋 Table of Contents
+## 📋 Command Line Options
 
-1. [Basic Usage](#basic-usage)
-2. [Command-Line Mode](#command-line-mode)
-3. [Interactive Mode](#interactive-mode)
-4. [Advanced Features](#advanced-features)
-5. [Examples](#examples)
-6. [Tips & Tricks](#tips--tricks)
-7. [Best Practices](#best-practices)
+### All Available Commands
 
----
+| Command | Short Form | Description | Example |
+|---------|------------|-------------|---------|
+| `--help` | `-h` | Display complete help guide | `python infinitychat.py --help` |
+| `--models` | `-m` | List all available AI models | `python infinitychat.py --models` |
+| `--stats` | `-s` | Show usage statistics | `python infinitychat.py --stats` |
+| `--model <id>` | `--ml <id>` | Use specific AI model | `python infinitychat.py --model llama "Write code"` |
+| `<query>` | - | Ask a single question | `python infinitychat.py "Hello!"` |
 
-## 🎯 Basic Usage
+### Detailed Examples
 
-### Method 1: Single Query
-
-Ask a question and get an immediate response:
+#### 1. Get Help
 
 ```bash
-python ai_chat.py "Your question here"
+python infinitychat.py --help
 ```
 
-**Example:**
-```bash
-python ai_chat.py "Write a poem about coding"
-```
+Shows comprehensive usage guide with examples.
 
-### Method 2: Interactive Chat
-
-Start a conversation session:
+#### 2. View Available Models
 
 ```bash
-python ai_chat.py
+python infinitychat.py --models
 ```
 
-Then type your messages one by one.
+Output:
+```
+🤖 AVAILABLE AI MODELS:
 
----
+ID              NAME                 PROVIDER        SPEED      QUALITY     
+----------------------------------------------------------------------------------
+default         Smart Auto-Select    Multi-Provider  Fast       High        
+gpt-free        GPT-Free             Open Source     Fast       High        
+llama           Llama 3              Meta AI         Medium     Very High   
+mistral         Mistral 7B           Mistral AI      Fast       High        
+gemini-lite     Gemini Lite          Google          Very Fast  High        
+claude-mini     Claude Mini          Anthropic       Fast       Very High   
+local           Local Brain          Built-in        Instant    Good        
 
-## 💻 Command-Line Mode
+💡 Tip: Use '--model <model_id>' to select a specific model
+   Default: 'default' (auto-selects best model)
+```
 
-### Syntax
+#### 3. Check Statistics
 
 ```bash
-python ai_chat.py [options] "your message"
+python infinitychat.py --stats
 ```
 
-### Examples
+Shows your usage history and performance metrics.
 
-#### Simple Question
+#### 4. Use Specific Model
+
 ```bash
-python ai_chat.py "What is machine learning?"
-```
+# For coding tasks
+python infinitychat.py --model llama "Write a Python function to sort a list"
 
-#### Request Code
-```bash
-python ai_chat.py "Show me a Python function to calculate factorial"
-```
+# For creative writing
+python infinitychat.py --model claude-mini "Write a poem about AI"
 
-#### Creative Writing
-```bash
-python ai_chat.py "Write a short story about AI"
-```
+# For science questions
+python infinitychat.py --model gemini-lite "Explain black holes"
 
-#### Multiple Words
-```bash
-python ai_chat.py Explain quantum computing in simple terms
-```
-
-### Output Format
-
-```
-============================================================
-UNLIMITED AI CHAT - NO LOGIN REQUIRED
-============================================================
-
-You: What is Python?
-
-AI: Python is a high-level, interpreted programming language...
+# For math problems
+python infinitychat.py --model gpt-free "Calculate 25 × 17"
 ```
 
 ---
@@ -104,451 +95,398 @@ AI: Python is a high-level, interpreted programming language...
 ### Starting Interactive Mode
 
 ```bash
-python ai_chat.py
+python infinitychat.py
 ```
 
-### Expected Output
+### Interface Overview
+
+When you start interactive mode, you'll see:
 
 ```
-============================================================
-UNLIMITED AI CHAT - NO LOGIN REQUIRED
-============================================================
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   🚀 InfinityChat v2.0.0                                  ║
+║   Unlimited AI Chat - No Login Required                   ║
+║                                                           ║
+║   ✨ NO LOGIN REQUIRED • UNLIMITED USE FOREVER ✨         ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
 
-Type your message (or 'quit' to exit):
+💬 Enter your questions below. Type '/exit' to quit.
 
-
-You: 
+------------------------------------------------------------
 ```
 
-### Conversation Flow
+### Interactive Commands
+
+While in chat, use these special commands:
+
+| Command | Action |
+|---------|--------|
+| `/models` | Display all available AI models |
+| `/stats` | Show your usage statistics |
+| `/clear` | Clear chat history |
+| `/help` | Show help guide |
+| `/exit` | Exit the program |
+| `quit` | Also exits |
+| `exit` | Also exits |
+
+### Example Session
 
 ```
-You: Hello!
-AI: Thinking...
-AI: Hello! I'm your unlimited AI assistant...
+👤 You: Hello!
 
-You: Can you write code?
-AI: Thinking...
-AI: Yes! Here's an example...
-
-You: Thank you!
-AI: Thinking...
-AI: You're welcome! Ask me anything else.
-
-You: quit
-
-Goodbye!
-```
-
-### Exit Commands
-
-Type any of these to exit:
-- `quit`
-- `exit`
-- `q`
-
-### Keyboard Shortcuts
-
-- `Ctrl+C`: Force exit
-- `Ctrl+D`: End input (Unix/Linux/Mac)
-- `Ctrl+Z`: Suspend (Windows)
+🤖 AI: Hello! I'm InfinityChat, your unlimited AI assistant. How can I help you today?
 
 ---
+🤖 Model: local | ⏱️ 0.00s | 💯 Confidence: 75%
 
-## 🔥 Advanced Features
+👤 You: Tell me a joke
 
-### 1. Multi-Line Input
+🤖 AI: Why do programmers prefer dark mode? Because light attracts bugs! 🐛
 
-For complex queries, use triple quotes (in interactive mode):
+---
+🤖 Model: local | ⏱️ 0.00s | 💯 Confidence: 75%
 
-```
-You: """
-Write a Python program that:
-1. Takes user input
-2. Processes it
-3. Returns formatted output
-"""
-```
+👤 You: /stats
 
-### 2. Batch Processing
+📊 USAGE STATISTICS
 
-Create a text file with queries:
+Total Requests:      2
+Successful:          2
+Failed Attempts:     0
+Success Rate:        100.0%
+Avg Response Time:   0.00s
+Current Model:       local
 
-**queries.txt:**
-```
-What is Python?
-Explain recursion
-Write hello world program
-```
+Model Usage:
+  • local: 2 requests
 
-**Process with:**
-```bash
-while read line; do python ai_chat.py "$line"; done < queries.txt
-```
+👤 You: /exit
 
-### 3. Save Responses
-
-Redirect output to a file:
-
-```bash
-python ai_chat.py "Explain AI" > response.txt
-```
-
-Or in interactive mode:
-```bash
-python ai_chat.py | tee conversation.txt
-```
-
-### 4. Pipe Input
-
-Use echo to pipe questions:
-
-```bash
-echo "What is 2 + 2?" | python ai_chat.py
-```
-
-### 5. Script Integration
-
-Use in your own Python scripts:
-
-```python
-import subprocess
-
-def ask_ai(question):
-    result = subprocess.run(
-        ['python', 'ai_chat.py', question],
-        capture_output=True,
-        text=True
-    )
-    return result.stdout
-
-response = ask_ai("What is Docker?")
-print(response)
+👋 Goodbye! Thanks for using InfinityChat!
 ```
 
 ---
 
-## 📚 Examples
+## 💡 Usage Examples by Category
 
-### Educational
+### 🧮 Mathematics
 
-#### Math Help
 ```bash
-python ai_chat.py "Explain Pythagorean theorem"
+# Basic arithmetic
+python infinitychat.py "What is 25 + 17?"
+python infinitychat.py "Calculate 100 - 37"
+python infinitychat.py "What's 15 × 8?"
+python infinitychat.py "Divide 144 by 12"
+
+# Advanced math
+python infinitychat.py "What is 2 to the power of 10?"
+python infinitychat.py "Calculate the square root of 144"
+python infinitychat.py "Solve x² = 81"
+python infinitychat.py "What is the factorial of 5?"
 ```
 
-#### Science
+### 💻 Programming & Code
+
 ```bash
-python ai_chat.py "How does photosynthesis work?"
+# Python code
+python infinitychat.py "Write a Python function to calculate factorial"
+python infinitychat.py "Create a Python script to read a CSV file"
+python infinitychat.py "How do I reverse a string in Python?"
+python infinitychat.py "Explain list comprehensions with examples"
+
+# JavaScript
+python infinitychat.py "Write a JavaScript function to sort an array"
+python infinitychat.py "How to fetch data from an API in JavaScript?"
+python infinitychat.py "Create a React component example"
+
+# Debugging
+python infinitychat.py "Debug this code: [paste your code]"
+python infinitychat.py "Why am I getting a null pointer exception?"
+
+# Algorithms
+python infinitychat.py "Implement binary search in Python"
+python infinitychat.py "Write a sorting algorithm"
+python infinitychat.py "Explain dynamic programming"
 ```
 
-#### History
+### 🔬 Science
+
 ```bash
-python ai_chat.py "Who was Albert Einstein?"
+# Physics
+python infinitychat.py "Explain quantum entanglement"
+python infinitychat.py "What is the theory of relativity?"
+python infinitychat.py "How does gravity work?"
+python infinitychat.py "Describe the double-slit experiment"
+
+# Chemistry
+python infinitychat.py "What is the structure of an atom?"
+python infinitychat.py "Explain chemical bonding"
+python infinitychat.py "What are isotopes?"
+
+# Biology
+python infinitychat.py "How does photosynthesis work?"
+python infinitychat.py "Explain DNA replication"
+python infinitychat.py "What is natural selection?"
+
+# Astronomy
+python infinitychat.py "What is a black hole?"
+python infinitychat.py "How are stars formed?"
+python infinitychat.py "Describe the Big Bang theory"
 ```
 
-### Programming
+### 📜 History & General Knowledge
 
-#### Code Generation
 ```bash
-python ai_chat.py "Write a Python function to sort a list"
+# History
+python infinitychat.py "Tell me about ancient Egypt"
+python infinitychat.py "Who was Julius Caesar?"
+python infinitychat.py "What caused World War II?"
+python infinitychat.py "Explain the Renaissance period"
+
+# Geography
+python infinitychat.py "What is the capital of Australia?"
+python infinitychat.py "How many continents are there?"
+python infinitychat.py "Describe the Amazon rainforest"
+
+# General knowledge
+python infinitychat.py "Who invented the telephone?"
+python infinitychat.py "What is the speed of light?"
+python infinitychat.py "How many bones are in the human body?"
 ```
 
-#### Debugging Help
+### ✍️ Writing & Creative
+
 ```bash
-python ai_chat.py "Why am I getting IndexError in Python?"
+# Creative writing
+python infinitychat.py "Write a short story about a robot"
+python infinitychat.py "Create a poem about nature"
+python infinitychat.py "Write a haiku about coding"
+
+# Professional writing
+python infinitychat.py "Write a professional email template"
+python infinitychat.py "Create a resume summary"
+python infinitychat.py "Draft a cover letter"
+
+# Content creation
+python infinitychat.py "Generate blog post ideas about AI"
+python infinitychat.py "Write social media posts"
+python infinitychat.py "Create a product description"
 ```
 
-#### Learning
+### 😄 Entertainment
+
 ```bash
-python ai_chat.py "Explain object-oriented programming"
+# Jokes
+python infinitychat.py "Tell me a joke"
+python infinitychat.py "Give me a programming joke"
+python infinitychat.py "Make me laugh"
+
+# Fun facts
+python infinitychat.py "Tell me an interesting fact"
+python infinitychat.py "What's a fun fact about space?"
+python infinitychat.py "Share a weird historical fact"
+
+# Games
+python infinitychat.py "Let's play 20 questions"
+python infinitychat.py "Give me a riddle"
+python infinitychat.py "Play word association"
 ```
 
-### Creative
+### ⏰ Time & Date
 
-#### Writing
 ```bash
-python ai_chat.py "Write a haiku about technology"
-```
-
-#### Ideas
-```bash
-python ai_chat.py "Give me 5 startup ideas for AI"
-```
-
-#### Stories
-```bash
-python ai_chat.py "Write a short mystery story"
-```
-
-### Productivity
-
-#### Email Drafts
-```bash
-python ai_chat.py "Draft a professional email for meeting request"
-```
-
-#### Summaries
-```bash
-python ai_chat.py "Summarize the benefits of exercise"
-```
-
-#### Lists
-```bash
-python ai_chat.py "List 10 healthy breakfast ideas"
+python infinitychat.py "What time is it?"
+python infinitychat.py "What's today's date?"
+python infinitychat.py "How many days until Christmas?"
 ```
 
 ---
 
-## 💡 Tips & Tricks
+## 🎯 Tips for Best Results
 
 ### 1. Be Specific
 
-❌ **Vague:**
+❌ Vague: "Tell me about Python"  
+✅ Specific: "Explain Python decorators with examples"
+
+### 2. Provide Context
+
+❌ Less effective: "Fix this"  
+✅ More effective: "Fix this Python error: IndexError: list index out of range"
+
+### 3. Break Down Complex Questions
+
+Instead of one huge question, ask multiple focused questions:
+
 ```bash
-python ai_chat.py "Tell me about code"
+python infinitychat.py "What is machine learning?"
+python infinitychat.py "What are the types of machine learning?"
+python infinitychat.py "Give me a simple ML example in Python"
 ```
 
-✅ **Specific:**
-```bash
-python ai_chat.py "Explain how Python decorators work with examples"
-```
+### 4. Use the Right Model
 
-### 2. Use Context
+- **Coding** → `--model llama`
+- **Math** → `--model gpt-free`
+- **Creative** → `--model claude-mini`
+- **Science** → `--model gemini-lite`
+- **General** → `--model default` (auto-selects)
 
-Provide context for better answers:
+### 5. Try Different Phrasings
 
-```bash
-python ai_chat.py "I'm a beginner programmer. Explain variables in Python"
-```
-
-### 3. Request Format
-
-Specify desired output format:
+If you don't get the answer you want, rephrase:
 
 ```bash
-python ai_chat.py "List 5 benefits of exercise in bullet points"
-```
+# First attempt
+python infinitychat.py "Explain recursion"
 
-### 4. Ask for Examples
+# If too technical
+python infinitychat.py "Explain recursion like I'm 5"
 
-```bash
-python ai_chat.py "Show me 3 examples of list comprehension in Python"
-```
-
-### 5. Iterative Refinement
-
-If answer isn't perfect, ask follow-up:
-
-```bash
-python ai_chat.py "Can you explain that more simply?"
-```
-
-### 6. Combine Topics
-
-```bash
-python ai_chat.py "How can I use AI in web development?"
-```
-
-### 7. Request Step-by-Step
-
-```bash
-python ai_chat.py "Explain how to install Python step by step"
+# If need examples
+python infinitychat.py "Explain recursion with Python examples"
 ```
 
 ---
 
-## 🎯 Best Practices
+## 📊 Understanding Responses
 
-### Do ✅
+### Response Format
 
-- Be clear and specific in your questions
-- Provide context when needed
-- Use proper grammar and spelling
-- Ask follow-up questions for clarification
-- Save important responses to files
+Each response includes:
 
-### Don't ❌
-
-- Don't ask overly broad questions
-- Don't expect real-time information
-- Don't share sensitive personal information
-- Don't rely solely on AI for critical decisions
-- Don't use for malicious purposes
-
-### Response Quality Tips
-
-| Query Type | Best Practice | Example |
-|------------|--------------|---------|
-| **Factual** | Be specific | "When was Python first released?" |
-| **Creative** | Give direction | "Write a funny poem about coding" |
-| **Technical** | Specify level | "Explain APIs to a beginner" |
-| **Code** | Language + task | "Python function to reverse string" |
+```
+[AI Response Content]
 
 ---
-
-## 🐛 Common Usage Issues
-
-### Issue: Slow Response
-
-**Cause:** Online API calls take time  
-**Solution:** Normal behavior (2-5 seconds). Local fallback is instant.
-
-### Issue: Generic Response
-
-**Cause:** Using local fallback mode  
-**Solution:** Check internet connection or be more specific in query.
-
-### Issue: No Response
-
-**Cause:** Network issues or API down  
-**Solution:** System will automatically use local responses.
-
-### Issue: Cut-off Response
-
-**Cause:** Response length limit  
-**Solution:** Ask for continuation: "Continue from where you left off"
-
----
-
-## 🎨 Customization
-
-### Modify Local Responses
-
-Edit `ai_chat.py` to add custom responses:
-
-```python
-def generate_local_response(prompt):
-    responses = {
-        "greeting": "Hello! How can I help you today?",
-        "joke": "Why do programmers prefer dark mode? Because light attracts bugs!",
-        # Add your own...
-    }
+🤖 Model: llama | ⏱️ 0.45s | 💯 Confidence: 95%
 ```
 
-### Change Default Model
+### What the Metrics Mean
 
-Modify API parameters in `ai_chat.py`:
+- **Model**: Which AI model generated the response
+- **Response Time**: How long it took (lower is faster)
+- **Confidence**: Model's confidence in the answer (higher is better)
 
-```python
-# In try_huggingface function
-payload = {
-    "inputs": prompt,
-    "parameters": {
-        "max_new_tokens": 1000,  # Increase for longer responses
-        "temperature": 0.8,       # Higher = more creative
-    }
-}
+### Online vs Offline Mode
+
+**Online Mode** (when APIs available):
 ```
+🤖 Model: llama | ⏱️ 1.23s | 💯 Confidence: 95%
+```
+
+**Offline Mode** (fallback to Local Brain):
+```
+🤖 Model: local | ⏱️ 0.00s | 💯 Confidence: 75%
+
+⚠️ Using offline mode. Online services temporarily unavailable.
+```
+
+Both modes provide helpful responses!
 
 ---
 
-## 📊 Usage Statistics
+## 🔧 Advanced Usage
 
-Track your usage (optional):
+### Scripting with InfinityChat
 
-```bash
-# Count queries
-python ai_chat.py "Hello" >> usage.log
+You can use InfinityChat in shell scripts:
 
-# View history
-cat usage.log
+#### Bash Script (Linux/Mac)
 
-# Count total queries
-wc -l usage.log
-```
-
----
-
-## 🔄 Automation Examples
-
-### Daily Question Script
-
-**daily_question.sh:**
 ```bash
 #!/bin/bash
-QUESTIONS=(
-    "What is one new thing I can learn today?"
-    "Give me a coding challenge"
-    "Share an interesting tech fact"
-)
-RANDOM_QUESTION=${QUESTIONS[$RANDOM % ${#QUESTIONS[@]}]}
-python ai_chat.py "$RANDOM_QUESTION"
+
+QUESTION="What is 2 + 2?"
+ANSWER=$(python infinitychat.py "$QUESTION" 2>&1 | grep -A 100 "Answer:" | tail -n +2)
+
+echo "Question: $QUESTION"
+echo "Answer: $ANSWER"
 ```
 
-### Auto-Response Bot
+#### PowerShell Script (Windows)
 
-```python
-import subprocess
-import time
+```powershell
+$question = "What is the capital of France?"
+$output = python infinitychat.py $question
 
-questions = [
-    "What is AI?",
-    "Explain machine learning",
-    "What is deep learning?"
-]
-
-for q in questions:
-    print(f"Q: {q}")
-    subprocess.run(['python', 'ai_chat.py', q])
-    time.sleep(2)
+Write-Host "Question: $question"
+Write-Host "Answer: $output"
 ```
 
----
+### Batch Processing
 
-## 📱 Mobile Usage
+Create a file `questions.txt`:
 
-### Termux (Android)
+```
+What is Python?
+Explain machine learning
+Tell me a joke
+```
+
+Process all questions:
 
 ```bash
-# Create alias
-echo 'alias ai="python /data/data/com.termux/files/home/unlimited-ai-chat/ai_chat.py"' >> ~/.bashrc
-
-# Use shortcut
-ai "Hello"
+while read question; do
+    echo "Q: $question"
+    python infinitychat.py "$question"
+    echo "---"
+done < questions.txt
 ```
 
-### iOS Shortcuts
+---
 
-Create iOS Shortcut:
-1. Open Shortcuts app
-2. Add action: "Run Pythonista"
-3. Select `ai_chat.py` script
-4. Add to home screen
+## 🎓 Best Practices
+
+### ✅ Do's
+
+- ✅ Be clear and specific in your questions
+- ✅ Use appropriate models for different tasks
+- ✅ Try interactive mode for conversations
+- ✅ Check `/stats` to monitor usage
+- ✅ Use `/help` when unsure
+
+### ❌ Don'ts
+
+- ❌ Don't ask overly vague questions
+- ❌ Don't expect perfect accuracy (it's AI)
+- ❌ Don't share sensitive personal information
+- ❌ Don't use for critical decisions without verification
 
 ---
 
-## 🎓 Learning Path
+## 🆘 Getting Help
 
-### Beginner
-1. Start with simple questions
-2. Try interactive mode
-3. Explore different query types
+### In-App Help
 
-### Intermediate
-1. Use batch processing
-2. Save and organize responses
-3. Integrate with scripts
+```bash
+# Command line
+python infinitychat.py --help
 
-### Advanced
-1. Customize source code
-2. Add new API endpoints
-3. Build applications on top
+# Interactive mode
+/ help
+```
 
----
+### Documentation
 
-## 📞 Need Help?
+- **[Installation Guide](INSTALLATION.md)** - Setup instructions
+- **[API Reference](API.md)** - Technical details
+- **[Troubleshooting](TROUBLESHOOTING.md)** - Common issues
+- **[FAQ](FAQ.md)** - Frequently asked questions
 
-- 📖 Read [FAQ](FAQ.md)
-- 🐛 Check [Troubleshooting](TROUBLESHOOTING.md)
-- 💬 Ask in [Discussions](https://github.com/YOUR_USERNAME/unlimited-ai-chat/discussions)
+### Community Support
+
+- GitHub Issues: Report bugs or request features
+- Discussions: Ask questions and share ideas
 
 ---
 
 <div align="center">
 
-**Ready to explore more? → [API Docs](API.md)**
+**Ready to chat?** Start with `python infinitychat.py`
 
-[Back to Docs](README.md) | [View API Reference →](API.md)
+[Back to Documentation Index](README.md)
 
 </div>
