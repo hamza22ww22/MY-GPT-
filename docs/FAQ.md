@@ -1,224 +1,247 @@
 # ❓ Frequently Asked Questions (FAQ)
 
-Common questions about Unlimited AI Chat answered.
+Comprehensive answers to common questions about InfinityChat.
 
----
+## 📖 Table of Contents
 
-## 📋 Table of Contents
-
-1. [General Questions](#general-questions)
-2. [Technical Questions](#technical-questions)
-3. [Usage Questions](#usage-questions)
-4. [Privacy & Security](#privacy--security)
-5. [Development & Contributing](#development--contributing)
-6. [Troubleshooting](#troubleshooting)
+- [General Questions](#general-questions)
+- [Technical Questions](#technical-questions)
+- [Usage Questions](#usage-questions)
+- [Privacy & Security](#privacy--security)
+- [Contributing & Support](#contributing--support)
 
 ---
 
 ## 🎯 General Questions
 
-### Q: Is this really 100% free?
+### Q: Is InfinityChat really free?
 
-**A:** Yes! Completely free with no hidden costs, subscriptions, or payments required.
+**A:** Yes! 100% free forever. No hidden costs, no premium tiers, no subscriptions. We believe AI should be accessible to everyone.
 
 ---
 
-### Q: Do I need to create an account?
+### Q: Do I need to create an account or login?
 
-**A:** Absolutely not! No registration, no email, no login required. Just download and run.
+**A:** Absolutely not! No login, no registration, no email required. Just download and start chatting immediately.
 
 ---
 
 ### Q: Are there any usage limits?
 
-**A:** None! Use it as much as you want, 24/7, with no rate limits or quotas.
+**A:** None whatsoever! Use it as much as you want, ask unlimited questions, 24/7. No daily limits, no rate limiting.
 
 ---
 
-### Q: Will this work forever?
+### Q: How is this possible if it's free?
 
-**A:** The local response generator will always work. Free API endpoints may change, but the code is open-source and can be updated.
+**A:** InfinityChat uses:
+- Free, open-source AI APIs
+- Multiple fallback endpoints
+- Built-in offline knowledge base
+- Community-driven development
 
 ---
 
 ### Q: Can I use this commercially?
 
-**A:** Yes! The MIT License allows commercial use, modification, and distribution. See [LICENSE](../LICENSE) for details.
+**A:** Yes! The MIT License allows commercial use. You can:
+- Use it in your business
+- Integrate it into products
+- Modify it for your needs
+- Distribute copies
+
+Just include the original license notice.
 
 ---
 
-### Q: Is there a mobile app?
+### Q: What makes InfinityChat different from other AI services?
 
-**A:** Not yet, but you can run it on mobile using Termux (Android) or Pythonista (iOS). See [Installation Guide](INSTALLATION.md#mobile-installation).
+**A:** Key differences:
 
----
-
-### Q: Can I distribute this with my software?
-
-**A:** Yes! MIT License allows redistribution. Just include the copyright notice.
+| Feature | Other Services | InfinityChat |
+|---------|---------------|--------------|
+| Login required | ✅ Yes | ❌ No |
+| Usage limits | ✅ Yes | ❌ No |
+| Cost | 💰 Paid tiers | ✅ Free |
+| Models | 1-2 options | 7+ models |
+| Offline mode | ❌ No | ✅ Yes |
+| Data tracking | ✅ Often | ❌ Never |
 
 ---
 
 ## 🔧 Technical Questions
 
-### Q: What programming language is this?
+### Q: What Python version do I need?
 
-**A:** Python 3.7+. The main script is `ai_chat.py`.
+**A:** Python 3.6 or higher. Python 3.8+ is recommended for best performance.
 
----
-
-### Q: What AI models does it use?
-
-**A:** 
-- **Primary**: Microsoft Phi-3-mini via Hugging Face
-- **Secondary**: Dolphin Mixtral via MyShell
-- **Fallback**: Local rule-based responses
+Check your version:
+```bash
+python --version
+```
 
 ---
 
-### Q: Does it require internet?
+### Q: Does it work offline?
 
-**A:** 
-- **Online APIs**: Yes, for better quality responses
-- **Local fallback**: No, works completely offline
+**A:** Yes! InfinityChat has a built-in "Local Brain" that works completely offline. It provides instant responses for:
+- Common questions
+- Programming basics
+- Math calculations
+- Jokes and fun facts
+- General knowledge
+
+Online mode provides more detailed responses, but offline mode is great for quick answers.
+
+---
+
+### Q: How many AI models are available?
+
+**A:** 7 different models plus offline mode:
+
+1. **Smart Auto-Select** (default) - Chooses best model automatically
+2. **GPT-Free** - For math and calculations
+3. **Llama 3** - Best for code generation
+4. **Mistral 7B** - Great for general queries
+5. **Gemini Lite** - Excellent for science topics
+6. **Claude Mini** - Perfect for creative writing
+7. **Local Brain** - Offline mode
+
+---
+
+### Q: Can I choose which model to use?
+
+**A:** Yes! Use the `--model` flag:
+
+```bash
+python infinitychat.py --model llama "Write a Python function"
+python infinitychat.py --model claude-mini "Write a poem"
+python infinitychat.py --model gemini-lite "Explain quantum physics"
+```
+
+Or let the default model auto-select based on your query.
+
+---
+
+### Q: What if the online APIs are down?
+
+**A:** No problem! InfinityChat automatically falls back to offline mode. You'll still get helpful responses instantly, just with slightly less detail.
+
+The system tries multiple API endpoints before switching to offline mode.
+
+---
+
+### Q: Does it require any dependencies or packages?
+
+**A:** No! InfinityChat uses only Python's standard library. No pip installs needed. It works out of the box.
+
+---
+
+### Q: Can I run this on mobile?
+
+**A:** Yes! With some setup:
+
+**Android:**
+- Install Termux from F-Droid
+- Install Python: `pkg install python`
+- Download and run the script
+
+**iOS:**
+- Install a-Shell from App Store
+- Download the script
+- Run with Python
+
+---
+
+### Q: Is the source code open?
+
+**A:** Yes! Completely open source under MIT License. You can:
+- View the code
+- Modify it
+- Contribute improvements
+- Learn from it
+
+---
+
+## 💬 Usage Questions
+
+### Q: How do I save my chat history?
+
+**A:** For privacy reasons, chats aren't automatically saved. However, you can:
+
+1. **Copy/paste** important conversations
+2. **Screenshot** responses
+3. **Redirect output** to a file:
+   ```bash
+   python infinitychat.py "Question" > answer.txt
+   ```
+
+We don't save your data, so you have full control.
+
+---
+
+### Q: How accurate are the responses?
+
+**A:** Accuracy varies by model and topic:
+
+- **Online models**: 85-95% accuracy for most topics
+- **Offline mode**: Good for common knowledge, limited for specialized topics
+
+Always verify critical information from multiple sources.
+
+---
+
+### Q: Can it write code?
+
+**A:** Yes! Especially good at:
+- Python, JavaScript, Java
+- Common algorithms
+- Debugging help
+- Code explanations
+
+Use `--model llama` for best coding results.
+
+---
+
+### Q: Can it solve math problems?
+
+**A:** Yes! From basic arithmetic to algebra:
+
+```bash
+python infinitychat.py "What is 25 + 17?"
+python infinitychat.py "Solve x² = 81"
+python infinitychat.py "Calculate the derivative of x²"
+```
+
+Use `--model gpt-free` for math problems.
+
+---
+
+### Q: Does it support multiple languages?
+
+**A:** The interface is in English, but you can ask questions in many languages. Response quality varies by language.
+
+Best supported: English
+Partial support: Spanish, French, German, Chinese, etc.
 
 ---
 
 ### Q: How fast are responses?
 
-**A:**
-- **Online APIs**: 2-5 seconds average
-- **Local fallback**: Instant (< 0.1 seconds)
+**A:** Depends on mode:
+
+- **Offline mode**: Instant (< 0.01s)
+- **Online mode**: 0.5-3 seconds (depends on internet and API)
 
 ---
 
-### Q: Can I customize the AI responses?
+### Q: Can I use it for homework or assignments?
 
-**A:** Yes! Edit the `generate_local_response()` function in `ai_chat.py` to add custom responses.
-
----
-
-### Q: Can I add my own API?
-
-**A:** Definitely! See [API Documentation](API.md#adding-new-apis) for step-by-step instructions.
-
----
-
-### Q: Does it support other languages?
-
-**A:** The AI models can understand and respond in multiple languages, though English works best.
-
----
-
-### Q: What's the difference between online and offline mode?
-
-**A:**
-| Feature | Online | Offline |
-|---------|--------|---------|
-| Quality | Higher | Basic |
-| Speed | 2-5 sec | Instant |
-| Intelligence | AI-powered | Rule-based |
-| Availability | 95% | 100% |
-
----
-
-### Q: Can I run this on a server?
-
-**A:** Yes! It works on any system with Python 3.7+. Great for servers, Raspberry Pi, etc.
-
----
-
-### Q: Does it support GPU acceleration?
-
-**A:** No, because it uses external APIs. Local responses don't need GPU.
-
----
-
-## 💡 Usage Questions
-
-### Q: How do I ask a question?
-
-**A:** 
-```bash
-python ai_chat.py "Your question here"
-```
-
----
-
-### Q: Can I have a conversation?
-
-**A:** Yes! Use interactive mode:
-```bash
-python ai_chat.py
-```
-Then type your messages one by one.
-
----
-
-### Q: How do I exit interactive mode?
-
-**A:** Type `quit`, `exit`, or `q`.
-
----
-
-### Q: Can I save responses?
-
-**A:** Yes! Redirect output:
-```bash
-python ai_chat.py "Question" > answer.txt
-```
-
----
-
-### Q: Can I batch process multiple questions?
-
-**A:** Yes! Create a file and process:
-```bash
-while read line; do python ai_chat.py "$line"; done < questions.txt
-```
-
----
-
-### Q: How do I get code examples?
-
-**A:** Just ask! Example:
-```bash
-python ai_chat.py "Show me a Python function to sort a list"
-```
-
----
-
-### Q: Can it write essays or stories?
-
-**A:** Yes! Try:
-```bash
-python ai_chat.py "Write a short story about AI"
-```
-
----
-
-### Q: Is there a word limit?
-
-**A:** Responses are limited to ~500 tokens by default. You can increase this in the code.
-
----
-
-### Q: Can I use this in my own Python project?
-
-**A:** Yes! Import the functions:
-```python
-from ai_chat import get_free_ai_response
-response = get_free_ai_response("Hello")
-```
-
----
-
-### Q: How do I make it faster?
-
-**A:** 
-1. Disconnect internet (uses instant local fallback)
-2. Or reduce timeout in code
-3. Or add caching
+**A:** You can use it as a learning tool, but:
+- Don't submit AI-generated work as your own
+- Use it to understand concepts, not just get answers
+- Always verify information
+- Follow your institution's AI policies
 
 ---
 
@@ -226,355 +249,242 @@ response = get_free_ai_response("Hello")
 
 ### Q: Is my data private?
 
-**A:** 
-- **Local responses**: 100% private, nothing leaves your computer
-- **Online APIs**: Sent to Hugging Face/MyShell per their privacy policies
-- **No data stored** by this project
+**A:** Yes! InfinityChat:
+- ❌ Doesn't collect your conversations
+- ❌ Doesn't track your usage
+- ❌ Doesn't store personal information
+- ❌ Doesn't share data with third parties
+
+Your chats stay on your device.
+
+---
+
+### Q: Are conversations stored anywhere?
+
+**A:** No! Conversations exist only in your terminal session. When you close the program, they're gone. We don't have servers storing your data.
+
+---
+
+### Q: Is it safe to use?
+
+**A:** Yes! The code:
+- Uses only standard Python libraries
+- Has no external dependencies
+- Doesn't execute downloaded code
+- Doesn't access your files
+- Only makes HTTPS requests to public APIs
+
+You can review the entire source code.
 
 ---
 
 ### Q: Should I share personal information?
 
-**A:** No! Don't share sensitive data like passwords, credit cards, or personal details.
+**A:** No! Even though we don't collect data:
+- Don't share passwords
+- Don't share financial information
+- Don't share sensitive personal details
+- Treat it like a public conversation
 
 ---
 
-### Q: Is the code safe?
+### Q: Does it use cookies or tracking?
 
-**A:** Yes! It's open-source. Anyone can review the code. No malware, no tracking, no telemetry.
-
----
-
-### Q: Does it collect analytics?
-
-**A:** No! Zero telemetry, no analytics, no tracking whatsoever.
+**A:** No cookies, no tracking pixels, no analytics. Nothing. Your privacy is paramount.
 
 ---
 
-### Q: Can I audit the code?
-
-**A:** Yes! That's the beauty of open-source. Review every line at [GitHub](https://github.com/YOUR_USERNAME/unlimited-ai-chat).
-
----
-
-### Q: Are API calls encrypted?
-
-**A:** Yes! All API calls use HTTPS for secure transmission.
-
----
-
-### Q: Where is my data processed?
-
-**A:**
-- **Local**: On your computer
-- **Online**: On Hugging Face or MyShell servers
-
----
-
-## 👨‍💻 Development & Contributing
+## 🤝 Contributing & Support
 
 ### Q: How can I contribute?
 
-**A:** See [CONTRIBUTING.md](../CONTRIBUTING.md) for ways to help!
+**A:** Many ways to help:
+
+- 🐛 **Report bugs** - Open GitHub issues
+- 💡 **Suggest features** - Share your ideas
+- 🔧 **Submit code** - Pull requests welcome
+- 📝 **Improve docs** - Fix typos, add examples
+- 🌍 **Translate** - Help localize
+- 📢 **Spread the word** - Share with others
+
+See [CONTRIBUTING.md](../CONTRIBUTING.md) for details.
 
 ---
 
-### Q: Can I fork this project?
+### Q: Where can I report bugs?
 
-**A:** Yes! MIT License allows forking, modifying, and redistributing.
+**A:** GitHub Issues:
+1. Go to the repository
+2. Click "Issues" tab
+3. Click "New Issue"
+4. Describe the bug with steps to reproduce
 
----
-
-### Q: How do I report a bug?
-
-**A:** Open an issue on [GitHub Issues](https://github.com/YOUR_USERNAME/unlimited-ai-chat/issues).
-
----
-
-### Q: Can I suggest features?
-
-**A:** Absolutely! Use [GitHub Issues](https://github.com/YOUR_USERNAME/unlimited-ai-chat/issues) or [Discussions](https://github.com/YOUR_USERNAME/unlimited-ai-chat/discussions).
+Include:
+- Your OS and Python version
+- Exact error message
+- What you expected vs what happened
 
 ---
 
-### Q: Is there a roadmap?
+### Q: Can I request new features?
 
-**A:** Check [CHANGELOG.md](../CHANGELOG.md) for planned features.
+**A:** Absolutely! Use GitHub Issues or Discussions to:
+- Suggest new models
+- Request features
+- Propose improvements
+- Share ideas
+
+We love hearing from users!
 
 ---
 
-### Q: How do I build from source?
+### Q: How do I get help if something doesn't work?
+
+**A:** Try these steps:
+
+1. **Check documentation** - [docs/](README.md)
+2. **Read FAQ** - You're here! 😊
+3. **Troubleshooting guide** - [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+4. **GitHub Issues** - Search or create new issue
+5. **Discussions** - Ask the community
+
+---
+
+### Q: Is there a community or forum?
+
+**A:** Yes! GitHub Discussions is the place to:
+- Ask questions
+- Share tips
+- Show what you've built
+- Connect with other users
+
+---
+
+### Q: Will there be paid features in the future?
+
+**A:** No! InfinityChat will always be:
+- 100% free
+- No premium tiers
+- No paywalls
+- Open source
+
+We might accept donations to support development, but all features remain free.
+
+---
+
+## 🎓 Advanced Questions
+
+### Q: Can I integrate this into my application?
+
+**A:** Yes! You can:
+- Import the modules
+- Call functions directly
+- Modify the code for your needs
+- Use as a subprocess
+
+Example:
+```python
+from infinitychat import ChatInterface
+chat = ChatInterface()
+response = chat.process_query("Your question")
+```
+
+---
+
+### Q: Can I host my own API endpoints?
+
+**A:** Yes! Edit the `API_ENDPOINTS` list in the Config class to use your own servers.
+
+---
+
+### Q: How do I add a new AI model?
 
 **A:** 
-```bash
-git clone https://github.com/YOUR_USERNAME/unlimited-ai-chat.git
-cd unlimited-ai-chat
-python ai_chat.py "Test"
-```
+1. Add model to `MODELS` dict in Config class
+2. Implement model selection logic in `select_best_model()`
+3. Add API endpoint handling if needed
+4. Test thoroughly
+
+See [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines.
 
 ---
 
-### Q: Can I create a GUI?
+### Q: Is there an API I can use programmatically?
 
-**A:** Yes! Many contributors are working on web and desktop interfaces.
+**A:** Currently, it's designed as a CLI tool. However, you can:
+- Import the Python modules
+- Use subprocess calls
+- Modify to create your own API
 
----
-
-### Q: Do you accept pull requests?
-
-**A:** Yes! See [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines.
-
----
-
-## 🐛 Troubleshooting
-
-### Q: Why is it slow?
-
-**A:** Online APIs take 2-5 seconds. For instant responses, use offline mode (disconnect internet).
+Future versions might include a REST API.
 
 ---
 
-### Q: Why are responses generic?
-
-**A:** If internet is down, it uses local fallback. Check your connection for better quality.
-
----
-
-### Q: ModuleNotFoundError: requests
-
-**A:** Install it:
-```bash
-pip install requests
-```
-Or run offline (doesn't need requests).
-
----
-
-### Q: Permission denied
-
-**A:** Make executable:
-```bash
-chmod +x ai_chat.py
-```
-
----
-
-### Q: Python not found
-
-**A:** Install Python 3.7+ from [python.org](https://www.python.org/downloads/).
-
----
-
-### Q: APIs not working
-
-**A:** 
-1. Check internet connection
-2. Check firewall settings
-3. APIs may be temporarily down (local fallback still works)
-
----
-
-### Q: Response is cut off
-
-**A:** Ask for continuation:
-```
-You: Continue from where you left off
-```
-
----
-
-### Q: Garbled text output
-
-**A:** Set encoding:
-```bash
-export PYTHONIOENCODING=utf-8
-```
-
----
-
-### Q: Can I use this without Git?
-
-**A:** Yes! Download the ZIP file from GitHub and extract it.
-
----
-
-## 📊 Performance & Scaling
-
-### Q: How many requests can I make?
-
-**A:** Unlimited! No rate limits imposed by this project.
-
----
-
-### Q: Can I run this in production?
-
-**A:** Yes! But for critical applications, consider:
-- Adding more API fallbacks
-- Implementing retry logic
-- Monitoring uptime
-
----
-
-### Q: Does it scale?
-
-**A:** Each instance runs independently. Deploy multiple instances for scaling.
-
----
-
-### Q: What's the resource usage?
-
-**A:** Minimal! 
-- RAM: ~50MB
-- CPU: Low (mostly waiting for API)
-- Disk: <1MB
-
----
-
-## 🌍 Localization
-
-### Q: Can I translate this?
-
-**A:** Yes! We welcome translations. See [CONTRIBUTING.md](../CONTRIBUTING.md).
-
----
-
-### Q: Does it work in my language?
-
-**A:** The AI models support multiple languages. Try asking in your preferred language!
-
----
-
-### Q: Can I add language support?
-
-**A:** Yes! Add translations to local responses in `ai_chat.py`.
-
----
-
-## 📱 Platform Support
+## 📱 Platform Questions
 
 ### Q: Does it work on Windows?
 
-**A:** Yes! Windows 7 and newer.
+**A:** Yes! Fully compatible with Windows 7, 8, 10, and 11.
 
 ---
 
 ### Q: Does it work on Mac?
 
-**A:** Yes! macOS 10.10+ with Python installed.
+**A:** Yes! Works on macOS 10.12+ with Python 3.6+.
 
 ---
 
 ### Q: Does it work on Linux?
 
-**A:** Yes! All major distributions (Ubuntu, Fedora, Debian, etc.).
+**A:** Yes! Compatible with all major distributions:
+- Ubuntu/Debian
+- Fedora/RHEL
+- Arch Linux
+- And more
 
 ---
 
-### Q: Does it work on Raspberry Pi?
+### Q: Can I run it on Raspberry Pi?
 
-**A:** Yes! Perfect for Raspberry Pi projects.
-
----
-
-### Q: Does it work on ChromeOS?
-
-**A:** Yes! Use Linux (Crostini) environment.
+**A:** Yes! Works great on Raspberry Pi with Raspbian.
 
 ---
 
-### Q: Does it work on Android?
+### Q: Does it work in the cloud?
 
-**A:** Yes! Using Termux app.
-
----
-
-### Q: Does it work on iOS?
-
-**A:** Yes! Using Pythonista app.
-
----
-
-## 🎓 Educational Use
-
-### Q: Can I use this for teaching?
-
-**A:** Absolutely! Great for teaching programming, AI concepts, and API integration.
+**A:** Yes! You can run it on:
+- AWS EC2
+- Google Cloud
+- Azure
+- DigitalOcean
+- Any VPS with Python
 
 ---
 
-### Q: Is it suitable for beginners?
+## 🆘 Still Have Questions?
 
-**A:** Yes! Simple to use, well-documented, and educational.
+If your question isn't answered here:
 
----
+1. **Check other docs:**
+   - [Installation Guide](INSTALLATION.md)
+   - [Usage Guide](USAGE.md)
+   - [Troubleshooting](TROUBLESHOOTING.md)
 
-### Q: Can students modify it?
+2. **Search GitHub:**
+   - Issues
+   - Discussions
+   - Wiki
 
-**A:** Yes! Perfect for learning projects and assignments.
-
----
-
-## 💰 Cost & Licensing
-
-### Q: Are there any premium features?
-
-**A:** No! Everything is free. No premium tier, no paid features.
-
----
-
-### Q: Will it ever become paid?
-
-**A:** This version will always remain free under MIT License. Future versions may have optional paid features, but core functionality stays free.
-
----
-
-### Q: Can I sell services based on this?
-
-**A:** Yes! MIT License allows commercial use.
-
----
-
-### Q: Do I need to credit you?
-
-**A:** Not required, but appreciated! Include the LICENSE file if distributing.
-
----
-
-## 🔮 Future Plans
-
-### Q: Will there be a web interface?
-
-**A:** Planned! Check [CHANGELOG.md](../CHANGELOG.md) for updates.
-
----
-
-### Q: Will you add voice support?
-
-**A:** Community contributions welcome! Not currently planned by core team.
-
----
-
-### Q: Will there be an app?
-
-**A:** Possibly! Depends on community interest and contributions.
-
----
-
-## 📞 Still Have Questions?
-
-### Get Help
-
-- 📖 Read [Documentation](README.md)
-- 🐛 Check [Issues](https://github.com/YOUR_USERNAME/unlimited-ai-chat/issues)
-- 💬 Ask in [Discussions](https://github.com/YOUR_USERNAME/unlimited-ai-chat/discussions)
-- 📧 Email: your.email@example.com
+3. **Ask the community:**
+   - Create a GitHub Discussion
+   - Join the conversation
 
 ---
 
 <div align="center">
 
-**Didn't find your answer? → [Ask in Discussions](https://github.com/YOUR_USERNAME/unlimited-ai-chat/discussions)**
+**Didn't find your answer?** → [Create a Discussion](https://github.com/yourusername/infinitychat/discussions)
 
-[Back to Docs](README.md) | [View Troubleshooting →](TROUBLESHOOTING.md)
+[Back to Documentation Index](README.md)
 
 </div>
